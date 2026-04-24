@@ -2,32 +2,28 @@
 **MSDS Data Science Practicum | Barsha Kakshapati**
 
 ## Project Overview
-This project implements and compares **Vanilla REINFORCE** and **REINFORCE with a Learned Baseline** using `CartPole-v1`. The goal is to empirically demonstrate that a baseline (Critic) reduces gradient variance, leading to more stable convergence.
+This project implements and compares **Vanilla REINFORCE** and **REINFORCE with a Learned Baseline** using the `CartPole-v1` environment. The primary objective is to demonstrate how a baseline (Critic) reduces gradient variance, leading to faster and more stable convergence.
 
 ## Key Results
 
-### 1. Performance Comparison (Variance Reduction)
-![Impact of Variance Reduction](./visuals/Impact of Variance Reduction.png)
-*The Baseline agent (Blue) demonstrates a steeper and more consistent learning curve compared to the Vanilla agent (Red).*
+### 1. Performance Comparison
+![Impact of Variance Reduction](./visuals/Impact%20of%20Variance%20Reduction.png)
+*The Baseline agent (Blue) demonstrates a steeper learning curve and higher reliability compared to the Vanilla agent (Red).*
 
-### 2. Critic Convergence (MSE Loss)
-![Critic Convergence](./visuals/Critic Convergence.png)
-*Mean Squared Error (MSE) decline proves the Value Network successfully learned the state-value function.*
+### 2. Critic Convergence
+![Critic Convergence](./visuals/Critic%20Convergence.png)
+*The downward trend in the Value Network's Mean Squared Error (MSE) indicates successful learning of the state-value function.*
 
 ### 3. Stability Distribution
-![Stability Distribution](./visuals/Stability Distribution.png)
-*The histogram confirms the Baseline method (Blue) consistently reaches the 500-reward threshold.*
+![Stability Distribution](./visuals/Stability%20Distribution.png)
+*The histogram shows the Baseline method consistently achieving maximum rewards of 500, whereas the Vanilla method is prone to early failure.*
 
 ### 4. Trained Agent Stability
-![Trained Agent Stability](./visuals/Trained Agent Stability.png)
-*Trajectory plot of the pole angle during a 500-step test, showing active balancing behavior.*
+![Trained Agent Stability](./visuals/Trained%20Agent%20Stability.png)
+*A trajectory plot of the pole angle during a 500-step test episode, showing the agent's ability to maintain balance through active corrections.*
 
 ## Repository Structure
 ```text
-├── visuals/                  <-- YOU MUST CREATE THIS FOLDER
-│   ├── Impact of Variance Reduction.png
-│   ├── Critic Convergence.png
-│   ├── Trained Agent Stability.png
-│   └── Stability Distribution.png
-├── requirements.txt
-└── README.md
+├── visuals/                  # Contains the 4 PNG images
+├── requirements.txt          # Library dependencies
+└── README.md                 # Project documentation
