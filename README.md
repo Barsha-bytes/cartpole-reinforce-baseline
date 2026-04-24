@@ -1,40 +1,27 @@
 # Lab 6: Variance Reduction in Policy Gradient Methods
-**MSDS Data Science Practicum | Regis University**
+**MSDS Data Science Practicum | Barsha Kakshapati**
 
 ## Project Overview
-This project implements and compares two Reinforcement Learning (RL) architectures—**Vanilla REINFORCE** and **REINFORCE with a Learned Baseline**—applied to the `CartPole-v1` environment. The goal is to demonstrate how a baseline (Critic) reduces gradient variance, leading to more stable and faster convergence.
+[cite_start]This project compares **Vanilla REINFORCE** and **REINFORCE with a Learned Baseline** in the `CartPole-v1` environment[cite: 100]. [cite_start]The goal is to prove that a baseline reduces gradient variance for more stable convergence[cite: 101].
 
-## Results
+## Key Results
 
-### 1. Performance Comparison (Variance Reduction)
+### 1. Performance Comparison
 ![Impact of Variance Reduction](./visuals/Impact of Variance Reduction.png)
-*The Baseline agent (Blue) reaches the 500-reward threshold more consistently than the Vanilla agent (Red), demonstrating reduced gradient variance.*
+[cite_start]*The Baseline agent (Blue) demonstrates a steeper and more consistent learning curve than the Vanilla agent (Red)[cite: 128, 129].*
 
-### 2. Critic Convergence (MSE Loss)
+### 2. Critic Convergence
 ![Critic Convergence](./visuals/Critic Convergence.png)
-*The downward trend in the Value Network's Mean Squared Error (MSE) confirms the baseline is successfully learning to predict state values.*
+[cite_start]*The decline in MSE loss indicates the Value Network is successfully learning the state-value function[cite: 145].*
 
-### 3. Trained Agent Stability
-![Trained Agent Stability](./visuals/Trained Agent Stability.png)
-*A trajectory plot of the pole angle during a test episode, showing the agent's ability to maintain balance through active corrections.*
-
-### 4. Reward Distribution
+### 3. Stability Distribution
 ![Stability Distribution](./visuals/Stability Distribution.png)
-*The histogram shows the Baseline method (Blue) consistently achieving maximum rewards compared to the high-failure rate of the Vanilla method.*
+[cite_start]*The Baseline method shows a high-frequency spike at the 500-reward mark, proving it is more robust against noise[cite: 167, 168].*
 
-## Installation & Usage
-1. Clone the repository.
+### 4. Trained Agent Stability
+![Trained Agent Stability](./visuals/Trained Agent Stability.png)
+[cite_start]*Trajectory plot showing the agent actively correcting the pole angle to maintain balance[cite: 182, 183].*
+
+## Installation
+1. Clone the repo.
 2. Install dependencies: `pip install -r requirements.txt`.
-3. Run the notebook in the `notebooks/` directory.
-
-## Repository Structure
-```text
-├── notebooks/
-│   └── Lab6_Reinforce.ipynb
-├── visuals/                  <-- Put your 4 PNG images here!
-│   ├── Impact of Variance Reduction.png
-│   ├── Critic Convergence.png
-│   ├── Trained Agent Stability.png
-│   └── Stability Distribution.png
-├── requirements.txt
-└── README.md
