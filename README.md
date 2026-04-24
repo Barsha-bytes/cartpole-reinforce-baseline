@@ -2,26 +2,32 @@
 **MSDS Data Science Practicum | Barsha Kakshapati**
 
 ## Project Overview
-[cite_start]This project compares **Vanilla REINFORCE** and **REINFORCE with a Learned Baseline** in the `CartPole-v1` environment[cite: 100]. [cite_start]The goal is to prove that a baseline reduces gradient variance for more stable convergence[cite: 101].
+This project implements and compares **Vanilla REINFORCE** and **REINFORCE with a Learned Baseline** using `CartPole-v1`. The goal is to empirically demonstrate that a baseline (Critic) reduces gradient variance, leading to more stable convergence.
 
 ## Key Results
 
-### 1. Performance Comparison
+### 1. Performance Comparison (Variance Reduction)
 ![Impact of Variance Reduction](./visuals/Impact of Variance Reduction.png)
-[cite_start]*The Baseline agent (Blue) demonstrates a steeper and more consistent learning curve than the Vanilla agent (Red)[cite: 128, 129].*
+*The Baseline agent (Blue) demonstrates a steeper and more consistent learning curve compared to the Vanilla agent (Red).*
 
-### 2. Critic Convergence
+### 2. Critic Convergence (MSE Loss)
 ![Critic Convergence](./visuals/Critic Convergence.png)
-[cite_start]*The decline in MSE loss indicates the Value Network is successfully learning the state-value function[cite: 145].*
+*Mean Squared Error (MSE) decline proves the Value Network successfully learned the state-value function.*
 
 ### 3. Stability Distribution
 ![Stability Distribution](./visuals/Stability Distribution.png)
-[cite_start]*The Baseline method shows a high-frequency spike at the 500-reward mark, proving it is more robust against noise[cite: 167, 168].*
+*The histogram confirms the Baseline method (Blue) consistently reaches the 500-reward threshold.*
 
 ### 4. Trained Agent Stability
 ![Trained Agent Stability](./visuals/Trained Agent Stability.png)
-[cite_start]*Trajectory plot showing the agent actively correcting the pole angle to maintain balance[cite: 182, 183].*
+*Trajectory plot of the pole angle during a 500-step test, showing active balancing behavior.*
 
-## Installation
-1. Clone the repo.
-2. Install dependencies: `pip install -r requirements.txt`.
+## Repository Structure
+```text
+├── visuals/                  <-- YOU MUST CREATE THIS FOLDER
+│   ├── Impact of Variance Reduction.png
+│   ├── Critic Convergence.png
+│   ├── Trained Agent Stability.png
+│   └── Stability Distribution.png
+├── requirements.txt
+└── README.md
